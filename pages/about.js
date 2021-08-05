@@ -3,7 +3,7 @@ import Image from "next/image";
 import fav from "../public/DSCF0026.JPG";
 import Axios from "axios";
 
-export async function getData(){
+export async function getStaticProps(){
 	var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
 	return {
 		props:{
