@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import fav from "../public/DSCF0026.JPG";
 
-var [number, setNum]=React.userState(0);
+var [number, setNum]=React.useState(0);
 const app=()=><div>
 	about.js
 	<div>
