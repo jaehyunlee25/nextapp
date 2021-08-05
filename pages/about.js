@@ -4,14 +4,14 @@ import fav from "../public/DSCF0026.JPG";
 import Axios from "axios";
 
 const App=async ()=>{
-	try{
-		var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
-		console.log(data);
-	}catch(e){
-		console.dir(e);
-	}
 	var [number, setNum]=useState(0);
 	function btnClick(){
+		try{
+			var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
+			console.log(data);
+		}catch(e){
+			console.dir(e);
+		}
 		setNum(number+1);
 	};
 	return (
