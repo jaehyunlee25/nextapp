@@ -5,7 +5,7 @@ import Axios from "axios";
 
 const App=()=>{
 	var [number, setNum]=useState(0);
-	function async btnClick(){
+	async function btnClick(){
 		try{
 			var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
 			console.log(data);
