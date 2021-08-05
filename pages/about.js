@@ -3,12 +3,19 @@ import Image from "next/image";
 import fav from "../public/DSCF0026.JPG";
 import Axios from "axios";
 
-try{
-	var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
-	console.log(data);
-}catch(e){
-	console.dir(e);
-}
+
+var data=getData();
+console.log(data);
+async function getData(){
+	var data=[];
+	try{
+		var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
+		console.log(data);
+	}catch(e){
+		console.dir(e);
+	}	
+	return data;
+};
 
 const App=()=>{
 	var [number, setNum]=useState(0);
