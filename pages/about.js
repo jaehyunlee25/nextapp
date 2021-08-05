@@ -62,7 +62,7 @@ const App=(props)=>{
 			</div>
 			{
 				list.map(ob=>{
-					return <div key={ob.id}>{ob.nickname}</div>
+					return <div key={ob.id}>{ob.name}</div>
 				})				
 			}
 			<div>{number}</div>
