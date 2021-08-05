@@ -12,12 +12,12 @@ const App=()=>{
 		}catch(e){
 			console.dir(e);
 		}	
+		async function getData(){
+			var data=await Axios.get("http://localhost/api/hello");
+			return data;
+		};
 	})
 	
-	async function getData(){
-		var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
-		return data;
-	};
 	async function btnClick(){
 		setNum(number+1);
 	};
