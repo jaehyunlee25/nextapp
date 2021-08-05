@@ -34,7 +34,7 @@ export async function getStaticProps(){
 	//var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
 	var data=await getData();
 	var result=data.rows.map(ob=>{
-		return {id:ob.id,name:nickname}
+		return {id:ob.id,name:ob.nickname}
 	});
 	return {
 		props:{
