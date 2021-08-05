@@ -5,6 +5,7 @@ import Axios from "axios";
 
 export async function getData(){
 	var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
+	console.log(data);
 	return {
 		props:{
 			data
