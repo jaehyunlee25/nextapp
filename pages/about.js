@@ -13,8 +13,7 @@ export async function getData(){
 };
 const App=({data})=>{
 	var [number, setNum]=useState(0);
-	function btnClick(){
-		console.dir(data);
+	function btnClick(){		
 		setNum(number+1);
 	};
 	return (
@@ -25,7 +24,7 @@ const App=({data})=>{
 			</div>
 			<div>{number}</div>
 			<div>
-				<button onClick={btnClick}>Add</button>
+				<button onClick={btnClick}>{data.data.name}</button>
 			</div>
 		</div>
 	)
