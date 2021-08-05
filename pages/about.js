@@ -8,14 +8,15 @@ const App=()=>{
 	
 	useEffect(_=>{
 		try{
-			var data=Axios.get("http://mnemosyne.co.kr/api/hello");
-			console.log(data);
+			console.log(getData());
 		}catch(e){
 			console.dir(e);
 		}	
 	})
 	
-	
+	async function getData(){
+		return await Axios.get("http://mnemosyne.co.kr/api/hello");		
+	};
 	async function btnClick(){
 		setNum(number+1);
 	};
