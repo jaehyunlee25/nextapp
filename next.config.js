@@ -1,4 +1,9 @@
 const withImages=require("next-images");
 module.exports=withImages({
-	reactStrictMode: true,
+	fileExtensions:["jpg"]
 });
+/*
+module.exports={
+	reactStrictMode: true
+};
+*/
