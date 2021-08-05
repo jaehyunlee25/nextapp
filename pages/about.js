@@ -64,7 +64,7 @@ const App=({result})=>{
 			}
 			<div>{number}</div>
 			<div>
-				<button onClick={btnClick}>{props.name}</button>
+				<button onClick={btnClick}>add</button>
 			</div>
 		</div>
 	)
