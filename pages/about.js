@@ -36,7 +36,7 @@ export async function getStaticProps(){
 	console.dir(data);
 	return {
 		props:{
-			result:rows,
+			result:data.rows,
 		}
 	}
 };
