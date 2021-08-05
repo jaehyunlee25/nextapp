@@ -40,9 +40,9 @@ export async function getStaticProps(){
 		}
 	}
 };
-const App=({result})=>{
+const App=(props)=>{
 	var [number, setNum]=useState(0);
-	var [list, setList]=useState(result);
+	var [list, setList]=useState(props.result);
 	function btnClick(){		
 		setNum(number+1);
 		/* setList([
