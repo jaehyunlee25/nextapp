@@ -23,7 +23,7 @@ function getData(){
 					dir(err);
 					return;
 				}		
-				resolve(res.rows);
+				resolve(res);
 				client.end();
 			}
 		);		
