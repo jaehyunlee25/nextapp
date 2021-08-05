@@ -3,15 +3,16 @@ import Image from "next/image";
 import fav from "../public/DSCF0026.JPG";
 import Axios from "axios";
 
+try{
+	var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
+	console.log(data);
+}catch(e){
+	console.dir(e);
+}
+
 const App=()=>{
 	var [number, setNum]=useState(0);
 	async function btnClick(){
-		try{
-			var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
-			console.log(data);
-		}catch(e){
-			console.dir(e);
-		}
 		setNum(number+1);
 	};
 	return (
