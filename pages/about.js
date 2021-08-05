@@ -33,10 +33,12 @@ function getData(){
 export async function getStaticProps(){
 	//var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
 	var data=await getData();
-	console.dir(data);
+	var result=data.rows.map(ob=>{
+		return {id:ob.id,name:nickname}
+	});
 	return {
 		props:{
-			data
+			result
 		}
 	}
 };
