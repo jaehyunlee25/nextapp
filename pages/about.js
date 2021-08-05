@@ -13,8 +13,14 @@ export async function getStaticProps(){
 };
 const App=(props)=>{
 	var [number, setNum]=useState(0);
+	var [list, setList]=useState([]);
 	function btnClick(){		
 		setNum(number+1);
+		setList([
+			{name:"jaehyunlee"},
+			{name:"okjinlee"},
+			{name:"hankyullee"}
+		]);
 	};
 	return (
 		<div>
@@ -22,7 +28,13 @@ const App=(props)=>{
 			<div>
 				<Image src={fav} width={100} height={100} alt="fav" />
 			</div>
-			<div>{number}</div>
+			{
+				list.forEach(ob=>{
+					return <div>ob.name</div>
+				});
+				<div>{number}</div>
+				
+			}
 			<div>
 				<button onClick={btnClick}>{props.name}</button>
 			</div>
