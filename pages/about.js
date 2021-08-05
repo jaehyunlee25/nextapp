@@ -3,7 +3,7 @@ import Image from "next/image";
 import fav from "../public/DSCF0026.JPG";
 import Axios from "axios";
 
-const async App=()=>{
+const App=async ()=>{
 	console.log(await Axios.get("http://localhost/api/hello"));
 	var [number, setNum]=useState(0);
 	function btnClick(){
