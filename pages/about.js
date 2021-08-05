@@ -4,7 +4,7 @@ import fav from "../public/DSCF0026.JPG";
 
 const App=()=>{	
 	var [number, setNum]=useState(0);
-	function btnClick()={
+	function btnClick(){
 		setNum(number+1);
 	};
 	return (
