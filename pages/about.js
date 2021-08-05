@@ -8,7 +8,7 @@ const App=()=>{
 	
 	useEffect(_=>{
 		try{
-			var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
+			var data=Axios.get("http://mnemosyne.co.kr/api/hello");
 			console.log(data);
 		}catch(e){
 			console.dir(e);
