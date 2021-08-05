@@ -3,21 +3,16 @@ import Image from "next/image";
 import fav from "../public/DSCF0026.JPG";
 import Axios from "axios";
 
+export async function getData(){
+	var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
+	return {
+		props:{
+			data
+		}
+	}
+};
 const App=()=>{
 	var [number, setNum]=useState(0);
-	
-	useEffect(_=>{
-		try{
-			console.log(getData());
-		}catch(e){
-			console.dir(e);
-		}	
-		async function getData(){
-			var data=await Axios.get("http://localhost/api/hello");
-			return data;
-		};
-	})
-	
 	async function btnClick(){
 		setNum(number+1);
 	};
