@@ -2,11 +2,12 @@
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
-  return 
+  return (
 	<>
 		<h1>mnemosyne.co.kr</h1>
 		<Component {...pageProps} />
 	<>
+	)
 }
 
 export default MyApp
