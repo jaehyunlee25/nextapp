@@ -7,7 +7,7 @@ export async function getStaticProps(){
 	var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
 	return {
 		props:{
-			data.data,
+			data,
 		}
 	}
 };
