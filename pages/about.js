@@ -15,7 +15,8 @@ const App=()=>{
 	})
 	
 	async function getData(){
-		return await Axios.get("http://mnemosyne.co.kr/api/hello");		
+		var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
+		return data;
 	};
 	async function btnClick(){
 		setNum(number+1);
