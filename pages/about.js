@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Image from "next/image";
 import fav from "../public/DSCF0026.JPG";
-import Axios from axios;
+import Axios from "axios";
 
 const async App=()=>{
 	console.log(await Axios.get("http://localhost/api/hello"));
