@@ -30,7 +30,7 @@ const App=(props)=>{
 			</div>
 			{
 				list.map(ob=>{
-					return <div>ob.name</div>
+					return <div>{ob.name}</div>
 				})				
 			}
 			<div>{number}</div>
