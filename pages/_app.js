@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
 	<>
 		<h1>mnemosyne.co.kr</h1>
 		<Component {...pageProps} />
-	<>
+	</>
 	)
 }
 
