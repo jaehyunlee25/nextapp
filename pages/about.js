@@ -4,7 +4,8 @@ import fav from "../public/DSCF0026.JPG";
 import Axios from "axios";
 
 const App=async ()=>{
-	console.log(await Axios.get("http://localhost/api/hello"));
+	var data=await Axios.get("http://localhost/api/hello");
+	console.log(data);
 	var [number, setNum]=useState(0);
 	function btnClick(){
 		setNum(number+1);
