@@ -7,11 +7,11 @@ export async function getStaticProps(){
 	var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
 	return {
 		props:{
-			data,
+			data.data,
 		}
 	}
 };
-const App=({data})=>{
+const App=(props)=>{
 	var [number, setNum]=useState(0);
 	function btnClick(){		
 		setNum(number+1);
@@ -24,7 +24,7 @@ const App=({data})=>{
 			</div>
 			<div>{number}</div>
 			<div>
-				<button onClick={btnClick}>{data.data.name}</button>
+				<button onClick={btnClick}>{props.name}</button>
 			</div>
 		</div>
 	)
