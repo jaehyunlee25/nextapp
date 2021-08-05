@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+#shell scripts
+exec.sh
