@@ -15,7 +15,7 @@ const App=()=>{
 			</div>
 			<div>{number}</div>
 			<div>
-				<button onclick={btnClick}>Add</button>
+				<button onClick={btnClick}>Add</button>
 			</div>
 		</div>
 	)
