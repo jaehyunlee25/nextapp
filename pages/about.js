@@ -23,7 +23,7 @@ function getData(){
 					dir(err);
 					return;
 				}		
-				resolve(res);
+				resolve(res.rows);
 				client.end();
 			}
 		);		
@@ -36,20 +36,20 @@ export async function getStaticProps(){
 	console.dir(data);
 	return {
 		props:{
-			name:"jaehyunlee"
+			result:rows,
 		}
 	}
 };
-const App=(props)=>{
+const App=({result})=>{
 	var [number, setNum]=useState(0);
-	var [list, setList]=useState([]);
+	var [list, setList]=useState(result);
 	function btnClick(){		
 		setNum(number+1);
-		setList([
+		/* setList([
 			{name:"jaehyunlee"},
 			{name:"okjinlee"},
 			{name:"hankyullee"}
-		]);
+		]); */
 	};
 	return (
 		<div>
@@ -59,7 +59,7 @@ const App=(props)=>{
 			</div>
 			{
 				list.map(ob=>{
-					return <div key={ob.name}>{ob.name}</div>
+					return <div key={ob.id}>{ob.nickname}</div>
 				})				
 			}
 			<div>{number}</div>
