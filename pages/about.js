@@ -45,6 +45,7 @@ export async function getStaticProps(){
 const App=(props)=>{
 	var [number, setNum]=useState(0);
 	var [list, setList]=useState(props.result);
+	console.dir(props.result);
 	function btnClick(){		
 		setNum(number+1);
 		/* setList([
