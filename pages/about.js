@@ -29,12 +29,11 @@ const App=(props)=>{
 				<Image src={fav} width={100} height={100} alt="fav" />
 			</div>
 			{
-				list.forEach(ob=>{
+				list.map(ob=>{
 					return <div>ob.name</div>
-				});
-				<div>{number}</div>
-				
+				})				
 			}
+			<div>{number}</div>
 			<div>
 				<button onClick={btnClick}>{props.name}</button>
 			</div>
