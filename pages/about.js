@@ -1,24 +1,21 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import Image from "next/image";
 import fav from "../public/DSCF0026.JPG";
 import Axios from "axios";
 
-
-var data=getData();
-console.log(data);
-async function getData(){
-	var data=[];
-	try{
-		var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
-		console.log(data);
-	}catch(e){
-		console.dir(e);
-	}	
-	return data;
-};
-
 const App=()=>{
 	var [number, setNum]=useState(0);
+	
+	useEffect(_=>{
+		try{
+			var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
+			console.log(data);
+		}catch(e){
+			console.dir(e);
+		}	
+	})
+	
+	
 	async function btnClick(){
 		setNum(number+1);
 	};
