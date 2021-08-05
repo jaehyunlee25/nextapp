@@ -4,6 +4,9 @@ import fav from "../public/DSCF0026.JPG";
 
 const App=()=>{	
 	var [number, setNum]=useState(0);
+	function btnClick()={
+		setNum(number+1);
+	};
 	return (
 		<div>
 			about.js
@@ -11,6 +14,9 @@ const App=()=>{
 				<Image src={fav} width={100} height={100} alt="fav" />
 			</div>
 			<div>{number}</div>
+			<div>
+				<button onclick={btnClick}>Add</button>
+			</div>
 		</div>
 	)
 };
