@@ -5,16 +5,16 @@ import Axios from "axios";
 
 export async function getData(){
 	var data=await Axios.get("http://mnemosyne.co.kr/api/hello");
-	console.log(data);
 	return {
 		props:{
 			data
 		}
 	}
 };
-const App=()=>{
+const App=({data})=>{
 	var [number, setNum]=useState(0);
-	async function btnClick(){
+	function btnClick(){
+		console.dir(data);
 		setNum(number+1);
 	};
 	return (
