@@ -25,9 +25,7 @@ const App=(props)=>{
 			{
 				list.map((ar,i)=>{
 					return <tr key={i}>
-						ar.map((item,j)=>{
-							return <td key={j}>{item}</td>							
-						});
+						ar.map((item,j)=><td key={j}>{item}</td>);
 					</tr>
 				})				
 			}
