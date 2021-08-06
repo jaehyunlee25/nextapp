@@ -24,11 +24,11 @@ const App=(props)=>{
 			<table>
 			{
 				list.map((ar,i)=>{
-					return <tr key={i}>
+					return (<tr key={i}>
 						{
 							ar.map((item,j)=><td key={j}>{item}</td>)
 						}
-					</tr>
+					</tr>)
 				})				
 			}
 			</table>
