@@ -7,7 +7,8 @@ export async function getStaticProps(){
 		fields=res.fields.map(ob=>ob.name),
 		result=res.data.rows.map(ob=>{			
 			return fields.map(field=>ob[field]);
-		});		
+		});	
+	console.dir(result);
 	return {
 		props:{result}
 	}
@@ -23,13 +24,13 @@ const App=(props)=>{
 	};
 	return (
 		<div>
-			<table>
+			/* <table>
 			{
-				/* list.map((ar,i)=>{
+				list.map((ar,i)=>{
 					return <tr key={i}><td>{ar[0]}</td></tr>
-				}) */				
+				})				
 			}
-			</table>
+			</table> */
 			<div>{number}</div>
 			<div>
 				<button onClick={btnClick}>add</button>
