@@ -1,32 +1,37 @@
 import React, {useState,useEffect} from "react";
 import fav from "../public/DSCF0026.JPG";
 import Axios from "axios";
+
 export async function getStaticProps(){
-	var data=await Axios.get("http://mnemosyne.co.kr:1000/api/member");
-	console.dir(data);
-	var result=data.data.rows.map(ob=>{
-		return {id:ob.id,name:ob.nickname}
-	});
+	var res=await Axios.get("http://mnemosyne.co.kr:1000/api/member"),
+		fields=res.fields.map(ob=>ob.name),
+		result=res.data.rows.map(ob=>{			
+			return fields.map(field=>ob[field]);
+		});		
 	return {
-		props:{
-			result
-		}
+		props:{result}
 	}
 };
 const App=(props)=>{
-	var [number, setNum]=useState(0);
-	var [list, setList]=useState(props.result);
-	console.dir(props.result);
+	var [number, setNum]=useState(0),
+		[list, setList]=useState(props.result);
+	
 	function btnClick(){		
 		setNum(number+1);
 	};
 	return (
 		<div>
+			<table>
 			{
-				list.map(ob=>{
-					return <div key={ob.id}>{ob.name}</div>
+				list.map((ar,i)=>{
+					return <tr key={i}>
+						ar.map((item,j)=>{
+							return <td key={j}>{item}</td>							
+						});
+					</tr>
 				})				
 			}
+			</table>
 			<div>{number}</div>
 			<div>
 				<button onClick={btnClick}>add</button>
