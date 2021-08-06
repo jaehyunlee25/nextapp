@@ -1,4 +1,4 @@
-export default function TABLE(props){
-	console.dir(props);
-	return <table></table>
+import TR from "/component/tr";
+export default function TABLE({list}){
+	return <table><TR list={list} /></table>
 }
