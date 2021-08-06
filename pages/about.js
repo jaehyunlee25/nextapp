@@ -30,9 +30,9 @@ const App=(props)=>{
 					return <tr key={i}>{
 						ar.map((item,j)=>{
 							<td key={j}>{item}</td>
-						});
+						})
 					}</tr>
-				});
+				})
 			}</table>
 			<div>{number}</div>
 			<div>
