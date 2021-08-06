@@ -2,6 +2,8 @@ import React, {useState,useEffect} from "react";
 import fav from "../public/DSCF0026.JPG";
 import Axios from "axios";
 
+import TABLE from "/component/table";
+
 export async function getStaticProps(){
 	var res=await Axios.get("http://mnemosyne.co.kr:1000/api/member"),
 		data=res.data,
@@ -23,7 +25,8 @@ const App=(props)=>{
 	};
 	return (
 		<div>
-			<table>{
+			<TABLE list={list} />
+			/* <table>{
 				list.map((ar,i)=>
 					<tr key={i}>{
 						ar.map((item,j)=>
@@ -33,7 +36,7 @@ const App=(props)=>{
 						)
 					}</tr>
 				)
-			}</table>
+			}</table> */
 			<div>{number}</div>
 			<div>
 				<button onClick={btnClick}>add</button>
