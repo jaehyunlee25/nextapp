@@ -24,13 +24,6 @@ const App=(props)=>{
 	};
 	return (
 		<div>
-			/* <table>
-			{
-				list.map((ar,i)=>{
-					return <tr key={i}><td>{ar[0]}</td></tr>
-				})				
-			}
-			</table> */
 			<div>{number}</div>
 			<div>
 				<button onClick={btnClick}>add</button>
