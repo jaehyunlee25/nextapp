@@ -4,7 +4,7 @@ import Axios from "axios";
 
 export async function getStaticProps(){
 	var res=await Axios.get("http://mnemosyne.co.kr:1000/api/member"),
-		fields=res.fields.map(ob=>ob.name);
+		fields=res.data.fields.map(ob=>ob.name);
 	console.dir(fields);
 	var	result=res.data.rows.map(ob=>{			
 			return fields.map(field=>ob[field]);
