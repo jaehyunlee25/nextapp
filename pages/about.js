@@ -9,7 +9,7 @@ export async function getStaticProps(){
 		result=data.rows.map(ob=>{
 			return fields.map(field=>ob[field]);
 		});	
-	
+	result.unshift(fields);
 	return {
 		props:{result}
 	}
@@ -18,8 +18,6 @@ const App=(props)=>{
 	var [number,setNum]=useState(0),
 		[list,setList]=useState(props.result);
 	
-	console.dir(list);
-	
 	function btnClick(){		
 		setNum(number+1);
 	};
@@ -27,11 +25,7 @@ const App=(props)=>{
 		<div>
 			<table>{
 				list.map((ar,i)=>{
-					return <tr key={i}>{
-						ar.map((item,j)=>{
-							<td key={j}>{item}</td>
-						})
-					}</tr>
+					return <tr key={i}><td>{ar[0]}</td></tr>
 				})
 			}</table>
 			<div>{number}</div>
