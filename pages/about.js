@@ -26,7 +26,7 @@ const App=(props)=>{
 	return (
 		<div>
 			<TABLE list={list} />
-			/* <table>{
+				{/* <table>{
 				list.map((ar,i)=>
 					<tr key={i}>{
 						ar.map((item,j)=>
@@ -36,7 +36,7 @@ const App=(props)=>{
 						)
 					}</tr>
 				)
-			}</table> */
+				}</table> */}
 			<div>{number}</div>
 			<div>
 				<button onClick={btnClick}>add</button>
