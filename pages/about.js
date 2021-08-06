@@ -4,9 +4,9 @@ import Axios from "axios";
 
 export async function getStaticProps(){
 	var res=await Axios.get("http://mnemosyne.co.kr:1000/api/member"),
-		fields=res.data.fields.map(ob=>ob.name);
-	console.dir(fields);
-	var	result=res.data.rows.map(ob=>{			
+		data=res.data,
+		fields=data.fields.map(ob=>ob.name),	
+		result=data.rows.map(ob=>{
 			return fields.map(field=>ob[field]);
 		});	
 	
@@ -25,6 +25,15 @@ const App=(props)=>{
 	};
 	return (
 		<div>
+			<table>{
+				list.map((ar,i)=>{
+					return <tr key={i}>{
+						ar.map((item,j)=>{
+							<td key={j}>{item}</td>
+						});
+					}</tr>
+				});
+			}</table>
 			<div>{number}</div>
 			<div>
 				<button onClick={btnClick}>add</button>
