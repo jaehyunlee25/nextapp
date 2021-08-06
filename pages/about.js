@@ -1,10 +1,8 @@
 import React, {useState,useEffect} from "react";
-//import Image from "next/image";
 import fav from "../public/DSCF0026.JPG";
 import Axios from "axios";
 export async function getStaticProps(){
 	var data=await Axios.get("http://mnemosyne.co.kr:1000/api/hello");
-	//var data=await getData();
 	var result=data.rows.map(ob=>{
 		return {id:ob.id,name:ob.nickname}
 	});
@@ -20,17 +18,9 @@ const App=(props)=>{
 	console.dir(props.result);
 	function btnClick(){		
 		setNum(number+1);
-		/* setList([
-			{name:"jaehyunlee"},
-			{name:"okjinlee"},
-			{name:"hankyullee"}
-		]); */
 	};
 	return (
 		<div>
-			/* <div>
-				<Image src={fav} width={100} height={100} alt="fav" />
-			</div> */
 			{
 				list.map(ob=>{
 					return <div key={ob.id}>{ob.name}</div>
