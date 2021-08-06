@@ -2,7 +2,7 @@ import React, {useState,useEffect} from "react";
 import fav from "../public/DSCF0026.JPG";
 import Axios from "axios";
 export async function getStaticProps(){
-	var data=await Axios.get("http://mnemosyne.co.kr:1000/api/hello");
+	var data=await Axios.get("http://mnemosyne.co.kr:1000/api/member");
 	var result=data.rows.map(ob=>{
 		return {id:ob.id,name:ob.nickname}
 	});
