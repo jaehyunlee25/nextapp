@@ -13,8 +13,10 @@ export async function getStaticProps(){
 	}
 };
 const App=(props)=>{
-	var [number, setNum]=useState(0),
-		[list, setList]=useState(props.result);
+	var [number,setNum]=useState(0),
+		[list,setList]=useState(props.result);
+	
+	console.dir(list);
 	
 	function btnClick(){		
 		setNum(number+1);
