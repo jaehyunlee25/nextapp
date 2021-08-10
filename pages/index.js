@@ -1,10 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Axios from 'axios'
 
 export default function Home() {
 	function btnClick(){
-		console.log(11);
+		Axios.post("http://localhost:1000/api/auth/signup",{})
+		.then(res=>{
+			console.dir(res);
+		})
+		.catch(err=>{
+			console.dir(err);
+		});
 	};
   return (
     <div className={styles.container}>
