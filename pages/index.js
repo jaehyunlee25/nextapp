@@ -5,7 +5,7 @@ import Axios from 'axios'
 
 export default function Home() {
 	function btnClick(){
-		Axios.post("http://localhost:1000/api/auth/signup",{})
+		Axios.post("http://mnemosyne.co.kr:1000/api/auth/signup",{})
 		.then(res=>{
 			console.dir(res);
 		})
