@@ -1,17 +1,35 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Axios from 'axios'
+import http from 'http'
 
 export default function Home() {
 	function btnClick(){
-		Axios.post("http://mnemosyne.co.kr:1000/api/auth/signup",{})
-		.then(res=>{
-			console.dir(res);
-		})
-		.catch(err=>{
-			console.dir(err);
+		const data="{}";
+		const options = {
+			hostname: 'mnemosyne.co.kr',
+			port: 1000,
+			path: '/api/auth/signup',
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'Content-Length': data.length
+			}
+		}
+		var result=[];
+		const req=http.request(options,res=>{
+			res.on("data",chunk=>{
+				result.push(chunk);
+			});
+			res.on("end",_=>{
+				console.log(result.join(""));
+			});
 		});
+		req.on("error",err=>{
+			console.log(err);
+		});
+		req.write(data);
+		req.end();
 	};
   return (
     <div className={styles.container}>
