@@ -12,7 +12,7 @@ export default function Home() {
 			path: '/api/auth/signup',
 			method: 'POST',
 			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded',
+				'Content-Type': 'application/json',
 				'Accept': 'application/json'
 			}
 		}
